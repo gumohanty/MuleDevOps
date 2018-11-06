@@ -1,0 +1,115 @@
+#%RAML 1.0
+baseUri: https://mocksvc.mulesoft.com/mocks/c6b64ce5-e37e-464a-a0ab-b0a9e05f2c7e # 
+title: ScatterGather API
+version: 1.0
+
+
+/cityindia:
+  get:
+    displayName: Get City Information(India)
+
+    responses: 
+      200:
+        body: 
+          application/json:
+            example: |
+                [
+                   {
+                     "country" : "IN",
+                     "name": "NewDelhi",
+                     "lat": "22.86643",
+                     "lng": "88.40113"
+                   },
+                    {
+                     "country" : "IN",
+                     "name": "Bangalore",
+                     "lat": "22.86643",
+                     "lng": "56.40113"
+                   },
+                    {
+                     "country" : "IN",
+                     "name": "Chennai",
+                     "lat": "22.86643",
+                     "lng": "88.40113"
+                   },
+                    {
+                     "country" : "IN",
+                     "name": "Kolkata",
+                     "lat": "22.86643",
+                     "lng": "88.40113"
+                   },
+                    {
+                     "country" : "IN",
+                     "name": "Bhubaneswar",
+                     "lat": "22.86643",
+                     "lng": "88.40113"
+                   }                                       
+                ] 
+  post:
+    displayName: Add a city details(India)
+    body: 
+      application/json:
+        example: |
+          {
+           "country": "IN",
+            "name": "Bhatinda",
+            "lat": "40.57106",
+            "lng": "-2.80121"
+          } 
+    responses: 
+      201:
+        body: 
+          application/json:
+            example: |
+              {"message": "City details added - India"}
+
+/cityspain:
+  get:
+    displayName: Get City Information(Spain)
+
+    responses: 
+      200:
+        body: 
+          application/json:
+            example: |
+                [
+                   {
+                    "country": "ES",
+                    "name": "Berriz",
+                    "lat": "43.16667",
+                    "lng": "-2.56667"
+                    },
+                    {
+                    "country": "ES",
+                    "name": "Berninches",
+                    "lat": "40.57106",
+                    "lng": "-2.80121"
+                    }                    
+                ] 
+  post:
+    displayName: Add a city details(Spain)
+    body: 
+      application/json:
+        example: |
+          {
+           "country": "ES",
+            "name": "Berninches",
+            "lat": "40.57106",
+            "lng": "-2.80121"
+          } 
+    responses: 
+      201:
+        body: 
+          application/json:
+            example: |
+              {"message": "City details added - Spain"}
+
+/scattergather:
+  get:
+    responses: 
+      200:
+        body: 
+          application/json:
+            example: |
+              {"message": "City Information"}
+

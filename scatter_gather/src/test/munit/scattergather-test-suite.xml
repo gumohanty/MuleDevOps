@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="scattergather-test-suite.xml" />
+	<munit:test name="scattergather-test-suite-get:\scattergather:scattergather-configTest" description="Test" doc:id="81705e9b-803a-43ce-8c33-5992b6c9f37d" >
+		<munit:behavior >
+			<munit-tools:mock-when doc:name="Mock when" doc:id="76946428-f026-491b-84db-a52e71336181" processor="http:request">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute attributeName="doc:id" whereValue="e6f63b5b-e12f-4a93-90ee-2de3801dbdbe" />
+				</munit-tools:with-attributes>
+				<munit-tools:then-return >
+					<munit-tools:payload mediaType="application/json" encoding="UTF-8" value="#[MunitTools::getResourceAsString('india.json')]"/>
+				</munit-tools:then-return>
+			</munit-tools:mock-when>
+			<munit-tools:mock-when doc:name="Mock when" doc:id="4e18e2d6-c804-4fb8-a2fe-2ad7e81b1aa3" processor="http:request">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute attributeName="doc:id" whereValue="ba96e547-147f-4d3c-8cfe-5b32a055a168" />
+				</munit-tools:with-attributes>
+				<munit-tools:then-return >
+					<munit-tools:payload value="#[MunitTools::getResourceAsString('spain.json')]" mediaType="application/json"/>
+				</munit-tools:then-return>
+			</munit-tools:mock-when>
+		</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to get:\scattergather:scattergather-config" doc:id="3e8026c7-d485-46c2-9b0c-d5f0bae0e5ea" name="get:\scattergather:scattergather-config"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-that doc:name="Assert that" doc:id="061fa503-4b0d-49e2-a598-e1dff3203dc1" expression="#[payload]" is="#[MunitTools::notNullValue()]" message="Payload is not Null"/>
+			<logger level="INFO" doc:name="Logger" doc:id="6ce12900-936c-46ae-99de-3d5adb88a0b6" message="#[payload]"/>
+		</munit:validation>
+	</munit:test>
+
+
+</mule>

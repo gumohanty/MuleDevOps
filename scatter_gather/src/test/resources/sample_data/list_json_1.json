@@ -1,0 +1,32 @@
+[
+  {
+    "country": "IN",
+    "name": "NewDelhi",
+    "lat": "22.86643",
+    "lng": "88.40113"
+  },
+  {
+    "country": "IN",
+    "name": "Bangalore",
+    "lat": "22.86643",
+    "lng": "56.40113"
+  },
+  {
+    "country": "IN",
+    "name": "Chennai",
+    "lat": "22.86643",
+    "lng": "88.40113"
+  },
+  {
+    "country": "IN",
+    "name": "Kolkata",
+    "lat": "22.86643",
+    "lng": "88.40113"
+  },
+  {
+    "country": "IN",
+    "name": "Bhubaneswar",
+    "lat": "22.86643",
+    "lng": "88.40113"
+  }
+]

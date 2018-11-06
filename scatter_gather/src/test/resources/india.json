@@ -1,0 +1,33 @@
+[
+	{
+		"country": "IN",
+		"city": "NewDelhi",
+		"lattitude": "22.86643",
+		"longitude": "88.40113"
+	},
+	{
+		"country": "IN",
+		"city": "Bangalore",
+		"lattitude": "22.86643",
+		"longitude": "56.40113"
+	},
+	{
+		"country": "IN",
+		"city": "Chennai",
+		"lattitude": "22.86643",
+		"longitude": "88.40113"
+	},
+	{
+		"country": "IN",
+		"city": "Kolkata",
+		"lattitude": "22.86643",
+		"longitude": "88.40113"
+	},
+	{
+		"country": "IN",
+		"city": "Bhubaneswar",
+		"lattitude": "22.86643",
+		"longitude": "88.40113"
+	}
+
+    ]
